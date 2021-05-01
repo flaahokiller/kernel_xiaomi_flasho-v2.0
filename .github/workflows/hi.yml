@@ -21,7 +21,7 @@ jobs:
       run: |
         echo 'Building on ${{ steps.get-date.outputs.date }}'
     - name: configure
-      run: make O=out ARCH=arm64 ysl_perf_defconfig
+      run: make O=out ARCH=arm64 ysl_perf-defconfig
     - name: make
       run: make O=out ARCH=arm64 CROSS_COMPILE=~/tc/gcc64/bin/aarch64-elf- CROSS_COMPILE_ARM32=~/tc/gcc32/bin/arm-eabi- -j$(nproc --all)
     - name: Kernel Image
